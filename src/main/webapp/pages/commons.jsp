@@ -1,25 +1,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri='http://java.sun.com/jstl/core_rt' prefix='c_rt'%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <%@ page isELIgnored="false"%>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<c:set var="ctx" value="<%=request.getContextPath() %>"/>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
-<script type="text/javascript" src="<%=basePath%>jquery-easyui-1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/jquery_dialog.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/datepicker.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/jquery.md5.js"></script>
-<script type="text/javascript" src="<%=basePath%>My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="${ctx}/jquery-easyui-1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${ctx}/jquery-easyui-1.4.2/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery_dialog.js"></script>
+<script type="text/javascript" src="${ctx}/js/datepicker.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.md5.js"></script>
+<script type="text/javascript" src="${ctx}/My97DatePicker/WdatePicker.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="<%=basePath%>css/default.css" />
-<link rel="stylesheet" type="text/css" href="<%=basePath%>jquery-easyui-1.4.2/themes/default/easyui.css" />
-<link rel="stylesheet" type="text/css" href="<%=basePath%>jquery-easyui-1.4.2/themes/icon.css" />
-<link rel="stylesheet" type="text/css" href="<%=basePath%>css/jquery_dialog.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/css/default.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/jquery-easyui-1.4.2/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/jquery-easyui-1.4.2/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="${ctx}/css/jquery_dialog.css">
 
 
 

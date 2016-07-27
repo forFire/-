@@ -7,10 +7,7 @@
 	
     HttpSession s = request.getSession(); 
 	User user =(User)s.getAttribute("user");
-	String userName ="";
-	if(user != null){
-		 userName = user.getUserName();
-	}
+	String userName = user.getUserName();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,7 +28,7 @@
 		<div data-options="region:'north'" style="height: 150px">
 
     			当前用户为：<%=userName%>
-		<input class="easyui-textbox" id="name" style="height: 25px" />
+		
 		</div>
 		<div data-options="region:'south',split:true" style="height: 50px;"></div>
 		<div data-options="region:'east',split:true" title="East" style="width: 100px;"></div>
@@ -84,18 +81,6 @@
 											field : 'address',
 											title : '地址',
 											align : 'center'
-										},{
-											field : 'phone',
-											title : 'phone',
-											align : 'center'
-										},{
-											field : 'email',
-											title : 'email',
-											align : 'center'
-										},{
-											field : 'qq',
-											title : 'qq',
-											align : 'center'
 										}]],
 										
 										toolbar : [
@@ -134,24 +119,19 @@
 															//显示修改界面
 															$('#updateCustomer').dialog(
 																{
-																	title : '客户管理|修改客户信息',
+																	title : '房产管理|修改房屋信息',
 																	width : 500,
 																	iconCls : 'icon-edit',
 																	height : 300,
 																	closed : false,
 																	cache : false,
 																	href : 'edit.jsp',
-																	modal : true,
-																	onLoad:function(){
-																		$("#name").val("123"); 
-																	},
+																	modal : true
 
 																});
 															
-// 															 alert(id)
-// 															 $('#updateCustomer').dialog("open");  
-// 															 $("#id").val(id);
-															 $("#name").val("1231"); 
+															 $("#id").val(id);
+															 $("#test").val("1231"); 
 															 
 														}else {
 															alert("提示, 请选中要编辑的行！")
@@ -218,7 +198,7 @@
 			$.ajax({
 				type : "POST",
 				url : "/customers/save.do",
-				data : $("#addCustomer").serialize(),
+				data : $("#ff").serialize(),
 				success : function(date) {
 					
 					if(date.ret == "0"){
@@ -238,7 +218,7 @@
 			$.ajax({
 				type : "POST",
 				url : "/customers/update.do",
-				data : $("#editCustomer").serialize(),
+				data : $("#ff").serialize(),
 				success : function(date) {
 					
 					if(date.ret == "0"){

@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* Reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+section, article, aside, header, footer, nav, dialog, figure {
+    display: block;
+}
+
+figure, img {
+    margin: 0;
+    border: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+fieldset, img {
+    border: none;
+}
+
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* Clearfix */
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+/* Basic */
+
+body {
+    font: 12px arial,'宋体',sans-serif;
+}
+
+
+p a {
+    color: #641d0a;
+    text-decoration: underline;
+}
+
+p a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+* html, * html body /* 修正IE6振动bug */      {
+    background-image: url('about:blank');
+    background-attachment: fixed;
+}

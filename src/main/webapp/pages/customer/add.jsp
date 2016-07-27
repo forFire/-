@@ -25,45 +25,13 @@ body {
 
 	<div class="easyui-panel" title="用户添加" style="width: 400px">
 		<div style="">
-			<form id="addCustomer" class="easyui-form" method="post" data-options="novalidate:true" action="">
+			<form id="ff" class="easyui-form" method="post" data-options="novalidate:true" action="">
 				<table cellpadding="5">
 					<tr>
 						<td>客户名称:</td>
 						<td><input class="easyui-textbox" type="text" name="name"  value=""></input></td>
 					</tr>
-					<tr>
-						<td>地址:</td>
-						<td><input class="easyui-textbox" type="text" name="address"  value=""></input></td>
-					</tr>
-					<tr>
-						<td>性别:</td>
-						<td>
-						  <select class="sex" >
-						     <option value="1">男</option>
-						      <option value="0">女</option>
-						  </select>
-						  </td>
-<!-- 						<td><input class="easyui-textbox" type="text" name="sex"  value=""></input></td> -->
-					</tr>
-					<tr>
-						<td>电话:</td>
-						<td><input class="easyui-textbox" type="text" name="phone"  value=""></input></td>
-					</tr>
 					
-					<tr>
-						<td>QQ:</td>
-						<td><input class="easyui-textbox" type="text" name="qq"  value=""></input></td>
-					</tr>
-					
-					<tr>
-						<td>Email:</td>
-						<td><input class="easyui-textbox" type="text" name="email"  value=""></input></td>
-					</tr>
-				
-					<tr>
-						<td>备注:</td>
-						<td><input class="easyui-textbox" type="text" name="memo"  value=""></input></td>
-					</tr>
 				</table>
 			</form>
 			<div style="text-align: center; padding: 5px">

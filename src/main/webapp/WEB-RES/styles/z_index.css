@@ -1,0 +1,51 @@
+a.z_btn {
+	color: #444;
+	font-size: 12px;
+	text-decoration: none;
+	display: inline-block;
+	background: url(images/button.png) no-repeat right -42px;
+	zoom: 1;
+	height: 21px;
+	padding-right: 14px;
+	cursor: pointer;
+	outline: none;
+}
+a.z_btn span.z_btn-left {
+	display: inline-block;
+	background: url(images/button.png) no-repeat left top;
+	padding: 4px 0px 4px 14px;
+	line-height: 13px;
+	height: 13px;
+}
+a.z_btn:active {
+	color: #15428B;
+	background-position: right bottom;
+	outline: none;
+}
+a.z_btn:active span.z_btn-left {
+	background-position: left -21px;
+}
+a.z_btn:hover {
+	color: #15428B;
+	background-position: right bottom;
+	outline: none;
+}
+a.z_btn:hover span.z_btn-left {
+	background-position: left -21px;
+}
+a.z_btn span span.z_btn-text {
+	display: inline-block;
+	height: 13px;
+	line-height: 13px;
+	padding: 0px;
+}
+.z_window {
+	color: #333;
+	margin: 20px 20px 20px;
+}
+.z_windowrow {
+	margin-bottom: 4px
+}
+.z_text {
+	width: 200px;
+}
