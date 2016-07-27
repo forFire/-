@@ -2,8 +2,11 @@ package com.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import com.model.User;
 
 /** 
  * @author zf
@@ -41,9 +44,11 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
         String requestUri = request.getRequestURI();  
         String contextPath = request.getContextPath();  
         String url = requestUri.substring(contextPath.length());  
-        String username =  (String)request.getSession().getAttribute("user");   
-        System.out.println("当前登录用户-=========》"+username);
-        if(username == null){  
+        User user =(User)request.getSession().getAttribute("user");   
+        
+//        System.out.println("当前登录用户-=========》"+user.getUserName());
+        
+        if(user == null){  
             request.getRequestDispatcher("/login.jsp").forward(request, response);  
             return false;  
         }else  

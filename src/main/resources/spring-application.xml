@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
-	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
     http://www.springframework.org/schema/context   
@@ -13,7 +13,7 @@
     http://www.springframework.org/schema/task/spring-task-3.2.xsd     
     http://www.springframework.org/schema/aop 
     http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
-    
+
 	<!-- 定时器开关 -->
 	<task:annotation-driven />
 	<!-- 标注类型 的事务配置 -->
@@ -25,13 +25,13 @@
 		<property name="ignoreResourceNotFound" value="true" />
 		<property name="location" value="classpath:application.properties" />
 	</bean>
-	
-	 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"  
-        destroy-method="close">  
-		<property name="driverClassName" value= "${druid.driverClassName}"/>
-		<property name="username" value="${druid.username}"/>
-		<property name="password" value="${druid.password}"/>
-		<property name="url" value="${druid.url}"/>
+
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${druid.driverClassName}" />
+		<property name="username" value="${druid.username}" />
+		<property name="password" value="${druid.password}" />
+		<property name="url" value="${druid.url}" />
 		<property name="initialSize" value="${druid.initialSize}" />
 		<property name="maxActive" value="${druid.maxActive}" />
 		<property name="minIdle" value="${druid.minIdle}" />
@@ -44,9 +44,9 @@
 		<property name="testWhileIdle" value="${druid.testWhileIdle}" />
 		<property name="testOnBorrow" value="${druid.testOnBorrow}" />
 		<property name="testOnReturn" value="${druid.testOnReturn}" />
-		<property name="filters" value="${druid.filters}" />	
+		<property name="filters" value="${druid.filters}" />
 	</bean>
-	
+
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -74,8 +74,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<aop:config>
-		<aop:pointcut
-			expression="execution(public * com.service.impl.*Impl.*(..))"
+		<aop:pointcut expression="execution(public * com.service.impl.*Impl.*(..))"
 			id="pointcut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
 	</aop:config>
@@ -94,48 +93,53 @@
 			<tx:method name="*" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
-	<!-- jdbcTemplate -->  
-    <bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">  
-        <property name="dataSource">  
-            <ref bean="dataSource" />  
-        </property>  
-    </bean>  
-    
-    <bean id="baseDao" class="com.dao.baseDao.HibernateBaseDao">
+	<!-- jdbcTemplate -->
+	<bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+
+	<bean id="baseDao" class="com.dao.baseDao.HibernateBaseDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-    
-    
+
+
 	<!-- redis config -->
 	<bean id="jedisConnectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
 		<property name="hostName" value="${redis.host}" />
 		<property name="port" value="${redis.port}" />
 		<property name="password" value="${redis.password}" />
-<!-- 		<property name="dbIndex" value="${redis.dbIndex}" /> -->
+		<!-- <property name="dbIndex" value="${redis.dbIndex}" /> -->
 	</bean>
 
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
 		<property name="connectionFactory" ref="jedisConnectionFactory" />
 		<property name="keySerializer">
-			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
 		</property>
 		<property name="valueSerializer">
-			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
 		</property>
 		<property name="hashKeySerializer">
-			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
 		</property>
 		<property name="hashValueSerializer">
-			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
 		</property>
 	</bean>
 	<!-- 使用Spring组件扫描的方式来实现自动注入bean -->
-	<context:component-scan base-package="com.model,com.service,com.service.impl,com.dao" />
-	
-<!-- 	<import resource="spring-security.xml"/> -->
-	
-		<!-- 邮件发送内容参数 -->
+	<context:component-scan
+		base-package="com.model,com.service,com.service.impl,com.dao" />
+
+	<!-- <import resource="spring-security.xml"/> -->
+
+	<!-- 邮件发送内容参数 -->
 	<bean id="mailConf" class="com.manage.MailConf">
 		<property name="from" value="fei.zhang@chinalbs.org" />
 		<property name="icon" value="${icon.file}" />
