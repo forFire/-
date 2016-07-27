@@ -7,7 +7,10 @@
 	
     HttpSession s = request.getSession(); 
 	User user =(User)s.getAttribute("user");
-	String userName = user.getUserName();
+	String userName ="";
+	if(user != null){
+		 userName = user.getUserName();
+	}
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
