@@ -139,14 +139,13 @@
 																	cache : false,
 																	href : 'edit.jsp',
 																	modal : true,
-																	
 																	onLoad:function(){
-																	$("#name").val("123"); 
+																		$("#name").val("123"); 
 																	},
 
 																});
 															
-// 															alert(id)
+// 															 alert(id)
 // 															 $('#updateCustomer').dialog("open");  
 // 															 $("#id").val(id);
 // 															 $("#name").val("1231"); 

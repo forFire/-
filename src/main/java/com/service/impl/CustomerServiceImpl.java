@@ -28,8 +28,11 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void update(Customers customers) {
+		
 		Customers c = customerDao.get_(customers.getId(),Customers.class );
-		c.setSex("1");
+		c.setSex(customers.getSex());
+		c.setAddress(customers.getAddress());
+		c.setName(customers.getName());
 		
 		customerDao.update_(c);
 	}
