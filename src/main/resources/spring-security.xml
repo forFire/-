@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/security 
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	<!-- 开发环境可以放置 <debug /> 配置，会输出详细Security处理日志，正式环境建议屏蔽 <debug /> 配置 <debug 
+		/> -->
+	<http pattern="/pages/denied.jsp" security="none" />
+	<http pattern="/pages/login.html" security="none" />
+	<http pattern="/user/login.do" security="none" />
+	<http pattern="/**/*.css" security="none" />
+	<http pattern="/**/*.js" security="none" />
+	<http pattern="/**/*.jpg" security="none" />
+	<http pattern="/**/*.png" security="none" />
+	<http pattern="/**/*.gif" security="none" />
+	<http pattern="/**/*.swf" security="none" />
+	<http pattern="/**/*.woff" security="none" />
+	<http pattern="/**/*.ttf" security="none" />
+
+	<!-- use-expressions="true" 的意思是开启表达式 access-denied-page的意思是，当验证权限失败后会跳转到的页面 -->
+	<http use-expressions="true" auto-config="false"
+		entry-point-ref="authenticationEntryPoint" access-denied-page="/pages/denied.jsp">
+
+		<!-- 以上未列出的，也都必须验证才能访问 -->
+		<intercept-url pattern="/**" access="isAuthenticated()" />
+		<!-- 以上未列出的，也都必须验证才能访问 -->
+
+		<!-- 所有地址全开，无需验证，测试用 -->
+		<!-- <intercept-url pattern="/**" access="permitAll" /> -->
+		<logout logout-success-url="/j_spring_security_logout"
+			logout-url="/pages/login.html" invalidate-session="true" delete-cookies="JSESSIONID" />
+			
+		<!-- 会话管理 -->
+		<session-management invalid-session-url="/pages/login.html" session-fixation-protection="none">
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/pages/login.html" />
+		</session-management>
+		<!-- 认证和授权 -->
+		<custom-filter ref="mySecurityFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+	</http>
+
+	<!-- 未登录的切入点 -->
+	<beans:bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<beans:property name="loginFormUrl" value="/pages/login.html"></beans:property>
+	</beans:bean>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsServiceImpl" />
+	</authentication-manager>
+	
+</beans:beans>
