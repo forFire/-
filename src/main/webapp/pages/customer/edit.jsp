@@ -23,7 +23,7 @@ body {
 
 	<div class="easyui-panel" title="用户添加" style="width: 400px">
 		<div style="">
-			<form id="ff" class="easyui-form" method="post" data-options="novalidate:true" action="">
+			<form id="editCustomer" class="easyui-form" method="post" data-options="novalidate:true" action="">
 				<table cellpadding="5">
 					<tr>
 						<td>ID</td>

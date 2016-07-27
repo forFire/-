@@ -218,7 +218,7 @@
 			$.ajax({
 				type : "POST",
 				url : "/customers/save.do",
-				data : $("#ff").serialize(),
+				data : $("#addCustomer").serialize(),
 				success : function(date) {
 					
 					if(date.ret == "0"){
@@ -238,7 +238,7 @@
 			$.ajax({
 				type : "POST",
 				url : "/customers/update.do",
-				data : $("#ff").serialize(),
+				data : $("#editCustomer").serialize(),
 				success : function(date) {
 					
 					if(date.ret == "0"){
