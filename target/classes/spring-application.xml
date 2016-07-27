@@ -135,5 +135,24 @@
 	
 <!-- 	<import resource="spring-security.xml"/> -->
 	
-	
+		<!-- 邮件发送内容参数 -->
+	<bean id="mailConf" class="com.manage.MailConf">
+		<property name="from" value="fei.zhang@chinalbs.org" />
+		<property name="icon" value="${icon.file}" />
+		<property name="image" value="${image.file}" />
+	</bean>
+	<!-- 邮件发送配置 -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="mail.chinalbs.org" />
+		<property name="port" value="25" />
+		<property name="username" value="fei.zhang" />
+		<property name="password" value="1q2w3e4r" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.timeout">30000</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">false</prop>
+			</props>
+		</property>
+	</bean>
 </beans>

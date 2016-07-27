@@ -28,7 +28,7 @@
 		<div data-options="region:'north'" style="height: 150px">
 
     			当前用户为：<%=userName%>
-		
+		<input class="easyui-textbox" id="name" style="height: 25px" />
 		</div>
 		<div data-options="region:'south',split:true" style="height: 50px;"></div>
 		<div data-options="region:'east',split:true" title="East" style="width: 100px;"></div>
@@ -148,7 +148,7 @@
 // 															 alert(id)
 // 															 $('#updateCustomer').dialog("open");  
 // 															 $("#id").val(id);
-// 															 $("#name").val("1231"); 
+															 $("#name").val("1231"); 
 															 
 														}else {
 															alert("提示, 请选中要编辑的行！")
