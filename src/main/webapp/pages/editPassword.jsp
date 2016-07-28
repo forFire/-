@@ -30,12 +30,12 @@ body {
 					<tr>
 						<tr>
 						<td>旧密码:</td>
-						<td><input class="easyui-textbox" type="text" name="old"  value=""></input></td>
+						<td><input class="easyui-textbox" type="text" name="password"  value=""></input></td>
 					</tr>
 					<tr>
 						<tr>
 						<td>新密码:</td>
-						<td><input class="easyui-textbox" type="text" name="new1"  value=""></input></td>
+						<td><input class="easyui-textbox" type="text" name="newPassword"  value=""></input></td>
 					</tr>
 				</table>
 			</form>

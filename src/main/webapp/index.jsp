@@ -119,12 +119,12 @@
 	
 	function passwordSubmit(){
 		
-		alert($("#new").val())
+		alert($("#newPassword").val())
 		
 		$.ajax({
 			type : "POST",
-			url : "/resume/save.do",
-			data:{new1:$("#new").val(),old:$.md5($("#old").val())},
+			url : "/user/updatePassword.do",
+			data:{newPassword:$.md5($("#new").val())},
 			data : $("#ff").serialize(),
 			success : function(date) {
 				if(date.ret == "0"){
