@@ -40,7 +40,7 @@ body {
 				</table>
 			</form>
 			<div style="text-align: center; padding: 5px">
-				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="passwordSubmit()">提交</a> <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#updateRecruit').dialog('close');">关闭</a>
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="passwordSubmit()">提交</a> <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#editPassword').dialog('close');">关闭</a>
 			</div>
 		</div>
 	</div>

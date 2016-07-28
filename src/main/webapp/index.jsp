@@ -41,7 +41,6 @@
 </head>
 <body class="easyui-layout z_layout">
 
-
     <div data-options="region:'north'" class="z_header">
 	    <div class="z_header-nav">
 			<ul>
@@ -106,10 +105,14 @@
 		$("#editPassword").dialog(
 			{
 				title : '密码修改',
-				width : 500,
+				width : 400,
 				iconCls : 'icon-edit',
-				height : 300,
+				height : 200,
 				closed : false,
+				 collapsible: true,
+	                minimizable: true,
+	                maximizable: true,
+	                resizable: true,
 				cache : false,
 				href : 'pages/editPassword.jsp',
 				modal : true
