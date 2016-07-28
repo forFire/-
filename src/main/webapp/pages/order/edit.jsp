@@ -28,24 +28,9 @@ body {
 			<form id="ff" class="easyui-form" method="post" data-options="novalidate:true" action="">
 				<table cellpadding="5">
 					<tr>
-						<td>招聘题目:</td>
-						<td><input class="easyui-textbox" type="text" name="resumeName"  value=""></input></td>
-					</tr>
-					<tr>
-						<td>类型:</td>
-						<td><input class="easyui-textbox" type="text" name="type"  value=""></input></td>
-					</tr>
-					<tr>
-						<td>发布人:</td>
-						<td><input class="easyui-textbox" type="text" name="publisher"  value=""></input></td>
-					</tr>
-					<tr>
-						<td>发布时间:</td>
-						<td><input class="easyui-textbox" type="text" name="publisherTime"  value=""></input></td>
-					</tr>
-					<tr>
-						<td>发布状态:</td>
-						<td><input class="easyui-textbox" type="text" name="publisherStatus"  value=""></input></td>
+						<tr>
+						<td>订单名称:</td>
+						<td><input class="easyui-textbox" type="text" name="name"  value=""></input></td>
 					</tr>
 				</table>
 			</form>

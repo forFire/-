@@ -70,22 +70,27 @@
 										}, {
 											field : 'name',
 											title : '客户名称',
+											width : 100,
 											align : 'center'
 										},{
 											field : 'address',
 											title : '地址',
+											width : 100,
 											align : 'center'
 										},{
 											field : 'phone',
 											title : '电话',
+											width : 100,
 											align : 'center'
 										},{
 											field : 'email',
 											title : '邮箱',
+											width : 100,
 											align : 'center'
 										},{
 											field : 'sex',
 											title : '性别',
+											width : 100,
 											align : 'center'
 										}]],
 										

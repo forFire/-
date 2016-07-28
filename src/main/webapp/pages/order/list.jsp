@@ -64,36 +64,24 @@
 													align : 'center',
 													hidden : true
 												}, {
-													field : 'resumeName',
-													title : "招聘信息",
+													field : 'name',
+													title : "订单名称",
 													width : 100,
 													align : 'center',
 													sortable : true,
 												}, {
-													field : 'type',
-													title : "类别",
+													field : 'memo',
+													title : "订单描述",
 													width : 100,
 													align : 'center',
 													sortable : true,
 												}, {
-													field : 'publisher',
-													title : "发布人",
+													field : 'orderTime',
+													title : "订单时间",
 													width : 100,
 													align : 'center',
 													sortable : true,
-												}, {
-													field : 'publisherTime',
-													title : "发布时间",
-													width : 100,
-													align : 'center',
-													sortable : true,
-												}, {
-													field : 'publisherStatus',
-													title : "发布状态",
-													width : 100,
-													align : 'center',
-													sortable : true,
-												} ] ],
+												}] ],
 
 												toolbar : [
 														{
@@ -131,7 +119,7 @@
 																							//获得编号
 																							var id = rows[0].id;
 																							// 获得删除行索引  
-																							var tableindex = $("#OrderInfo").datagrid('getRowIndex',id);$.post('/resume/delete.do',{"id" : id},
+																							var tableindex = $("#OrderInfo").datagrid('getRowIndex',id);$.post('/orders/delete.do',{"id" : id},
 																											function(data) {
 																												if (data.message == "2") {
 																													$.messager.alert('温馨提示','删除失败!','error');
@@ -207,7 +195,7 @@
 	function submitform() {
 		$.ajax({
 			type : "POST",
-			url : "/resume/save.do",
+			url : "/orders/save.do",
 			data : $("#ff").serialize(),
 			success : function(date) {
 				
@@ -227,7 +215,7 @@
 	function updateform() {
 		$.ajax({
 			type : "POST",
-			url : "/resume/update.do",
+			url : "/orders/update.do",
 			data : $("#ff").serialize(),
 			success : function(date) {
 				

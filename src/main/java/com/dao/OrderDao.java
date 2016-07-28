@@ -17,6 +17,8 @@ public class OrderDao extends GenericDao<Orders, Serializable>{
 	}
 	
 	
-	
+	public void saveOrder(Orders orders){
+		save(orders);
+	}
 	
 }

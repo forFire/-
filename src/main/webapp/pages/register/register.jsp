@@ -54,7 +54,7 @@
 				success : function(obj) {
 					console.log(obj);
 					if(obj.code == 1){
-						window.top.location = '<%=basePath%>' + "pages/main.jsp";
+						window.top.location = '<%=basePath%>' + "index.jsp";
 					}else{
 						$.messager.alert("提示",obj.desc);
 					}

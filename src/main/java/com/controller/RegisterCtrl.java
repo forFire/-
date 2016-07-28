@@ -3,6 +3,7 @@ package com.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,9 +47,12 @@ public class RegisterCtrl {
 	@ResponseBody
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public  Map<String, Object> register(User user, HttpServletRequest request){
-		System.out.println(user.getUserName()+"=password="+user.getPassword());
+//		System.out.println(user.getUserName()+"=password="+user.getPassword());
 		//保存到数据库中
 		userService.saveUser(user);
+		HttpSession session = request.getSession(true);
+		session.setAttribute("user", user);
+		session.setAttribute("userId", user.getId());
 		return ResponseUtil.success("注册成功！");
 	}
 	
