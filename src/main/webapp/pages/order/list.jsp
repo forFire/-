@@ -23,21 +23,12 @@
 
 	<div style="margin: 20px 0;"></div>
 	<div class="easyui-layout" style="width: 100%; height: 660px;">
-<!-- 		<div data-options="region:'north'" style="height: 150px"> -->
-<!-- 		</div> -->
-
-<!-- 				<div data-options="region:'south',split:true" style="height: 50px;"></div> -->
-<!-- 				<div data-options="region:'east',split:true" title="East" -->
-<!-- 					style="width: 100px;"></div> -->
-<!-- 		<div data-options="region:'west',split:true" title="左侧" -->
-<!-- 			style="width: 200px;"></div> -->
-
 	<div id="addRecruit"></div>
 		<div id="updateRecruit"></div>
 
-		<div data-options="region:'center',title:'招聘列表',iconCls:'icon-ok'"
+		<div data-options="region:'center',title:'订单列表',iconCls:'icon-ok'"
 			style="width: 100px;">
-			<table id="ResumeInfo" style="height: 100%; width: 100%;"></table>
+			<table id="OrderInfo" style="height: 100%; width: 100%;"></table>
 		</div>
 		
 	</div>
@@ -46,7 +37,7 @@
 		$(document)
 				.ready(
 						function() {//datagrid设置
-							$('#ResumeInfo')
+							$('#OrderInfo')
 									.datagrid(
 											{ // 													title : '招聘列表', //表格标题
 												iconCls : 'icon-list', //表格图标
@@ -54,7 +45,7 @@
 												striped : true,
 												fitColumns : true, //防止水平滚动
 												scrollbarSize : 0, //去掉右侧滚动条列
-												url : "/resume/findResumeList.do", //action地址
+												url : "/orders/list.do", //action地址
 												idField : 'id',
 												collapsible : false,//是否可折叠的 
 												singleSelect : true,//只能单选
@@ -90,13 +81,6 @@
 													width : 100,
 													align : 'center',
 													sortable : true,
-												// 										formatter : function(value, row,index) {
-												// 											if (value == "0") {
-												// 												return '已使用';
-												// 											} else {
-												// 												return '<font color="red">value</font>';
-												// 											}
-												// 										}
 												}, {
 													field : 'publisherTime',
 													title : "发布时间",
@@ -139,7 +123,7 @@
 															iconCls : "icon-cut",
 															handler : function() {
 																//选中要修改删除的行
-																var rows = $("#ResumeInfo").datagrid('getSelections'); //返回所有选中的行
+																var rows = $("#OrderInfo").datagrid('getSelections'); //返回所有选中的行
 																if (rows.length > 0) {//选中几行的话触发事件
 																	$.messager.confirm("提示","您确定要删除此行么？",
 																					function(res) {//提示是否删除
@@ -147,13 +131,13 @@
 																							//获得编号
 																							var id = rows[0].id;
 																							// 获得删除行索引  
-																							var tableindex = $("#ResumeInfo").datagrid('getRowIndex',id);$.post('/resume/delete.do',{"id" : id},
+																							var tableindex = $("#OrderInfo").datagrid('getRowIndex',id);$.post('/resume/delete.do',{"id" : id},
 																											function(data) {
 																												if (data.message == "2") {
 																													$.messager.alert('温馨提示','删除失败!','error');
 																												} else {
 																													//删除选中的行
-																													$("#ResumeInfo").datagrid("deleteRow",tableindex);
+																													$("#OrderInfo").datagrid("deleteRow",tableindex);
 																												}
 																											});
 
@@ -172,7 +156,7 @@
 															iconCls : "icon-edit",
 															handler : function() {
 																//选中要修改删除的行
-																var rows = $("#ResumeInfo").datagrid('getSelections'); //返回所有选中的行
+																var rows = $("#OrderInfo").datagrid('getSelections'); //返回所有选中的行
 																if (rows.length > 0) {//选中几行的话触发事件
 																	//获得编号
 																	var id = rows[0].id;
@@ -196,7 +180,7 @@
 														{   text : "刷新列表",
 															iconCls : "icon-reload",
 															handler : function() {
-																$("#ResumeInfo").datagrid('reload');
+																$("#OrderInfo").datagrid('reload');
 															}
 														} ],
 												onLoadError : function() {
@@ -209,7 +193,7 @@
 
 		//改变分页显示
 		function displayMsg() {
-			$('#ResumeInfo')
+			$('#OrderInfo')
 					.datagrid('getPager')
 					.pagination(
 							{
@@ -229,7 +213,7 @@
 				
 				if(date.ret == "0"){
 					alert("保存成功!");
-					$("#ResumeInfo").datagrid('reload');
+					$("#OrderInfo").datagrid('reload');
 				}else{
 					alert("保存出错!"+msg);
 				}
@@ -249,7 +233,7 @@
 				
 				if(date.ret == "0"){
 					alert("更新成功!");
-					$("#ResumeInfo").datagrid('reload');
+					$("#OrderInfo").datagrid('reload');
 				}else{
 					alert("保存出错!"+msg);
 				}

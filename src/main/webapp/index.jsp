@@ -83,13 +83,19 @@
     var _menus;
 	<% if("admin".equals("admin")){ %>
 	 	_menus ={"menus":[
-				{"menuid":"a2","icon":"icon-collect","menuname":"菜单管理",
+				{"menuid":"a2","icon":"icon-collect","menuname":"客户订单管理",
 					"menus":[
 							{"menuid":"20","menuname":"客户管理","icon":"tree-file","url":"pages/customer/list.jsp"},
-							{"menuid":"21","menuname":"订单管理","icon":"tree-file","url":"pages/resume/list.jsp"}
+							{"menuid":"21","menuname":"订单管理","icon":"tree-file","url":"pages/order/list.jsp"}
+						]
+				},
+
+				
+				{"menuid":"a3","icon":"icon-collect","menuname":"简历管理",
+					"menus":[
+							{"menuid":"22","menuname":"简历管理","icon":"tree-file","url":"pages/resume/list.jsp"}
 						]
 				}
-
         ]};
 	<%}%>
 

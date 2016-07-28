@@ -10,7 +10,7 @@
 <html>
 <head>
 
-<title>客户添加</title>
+<title>简历添加</title>
 <style type="text/css">
 body {
 	margin: 5 5 5 5;
@@ -28,30 +28,29 @@ body {
 			<form id="ff" class="easyui-form" method="post" data-options="novalidate:true" action="">
 				<table cellpadding="5">
 					<tr>
-						<td>客户名称:</td>
-						<td><input class="easyui-textbox" type="text" name="name"  value=""></input></td>
+						<td>招聘题目:</td>
+						<td><input class="easyui-textbox" type="text" name="resumeName"  value=""></input></td>
 					</tr>
 					<tr>
-						<td>客户地址:</td>
-						<td><input class="easyui-textbox" type="text" name="address"  value=""></input></td>
+						<td>类型:</td>
+						<td><input class="easyui-textbox" type="text" name="type"  value=""></input></td>
 					</tr>
 					<tr>
-						<td>电话:</td>
-						<td><input class="easyui-textbox" type="text" name="phone"  value=""></input></td>
+						<td>发布人:</td>
+						<td><input class="easyui-textbox" type="text" name="publisher"  value=""></input></td>
 					</tr>
 					<tr>
-						<td>邮箱:</td>
-						<td><input class="easyui-textbox" type="text" name="email"  value=""></input></td>
+						<td>发布时间:</td>
+						<td><input class="easyui-textbox" type="text" name="publisherTime"  value=""></input></td>
 					</tr>
 					<tr>
-						<td>性别:</td>
-						<td><input class="easyui-textbox" type="text" name="sex"  value=""></input></td>
+						<td>发布状态:</td>
+						<td><input class="easyui-textbox" type="text" name="publisherStatus"  value=""></input></td>
 					</tr>
-					
 				</table>
 			</form>
 			<div style="text-align: center; padding: 5px">
-				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitform()">提交</a> <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#addCustomer').dialog('close');">关闭</a>
+				<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitform()">提交</a> <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#addRecruit').dialog('close');">关闭</a>
 			</div>
 		</div>
 	</div>

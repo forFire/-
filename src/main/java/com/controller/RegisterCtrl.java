@@ -39,7 +39,6 @@ public class RegisterCtrl {
 	@ResponseBody
 	@RequestMapping(value = "/registerJump", method = RequestMethod.POST)
 	public  Map<String, Object> registerJump(){
-		logger.info("---------------");
 		return ResponseUtil.success("跳转成功！");
 	}
 	

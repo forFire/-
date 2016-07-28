@@ -1,8 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()+ path + "/";
 %>
 
 <jsp:include page="/pages/commons.jsp"></jsp:include>
@@ -54,7 +53,7 @@
 				success : function(obj) {
 					console.log(obj);
 					if(obj.ret == 0){
-						window.top.location = '<%=basePath%>' + "pages/customer/list.jsp";
+						window.top.location = '<%=basePath%>' + "/index.jsp";
 					}else{
 						$.messager.alert("提示",obj.desc);
 					}

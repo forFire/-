@@ -49,6 +49,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
 //        System.out.println("当前登录用户-=========》"+user.getUserName());
         
         if(user == null){  
+//            request.getRequestDispatcher("/register/registerJump.do").forward(request, response);  
             request.getRequestDispatcher("/login.jsp").forward(request, response);  
             return false;  
         }else  

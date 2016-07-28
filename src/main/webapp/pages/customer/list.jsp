@@ -43,7 +43,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {//datagrid设置
 				$('#customerTable').datagrid(
-									{ // 													title : '招聘列表', //表格标题
+									{ // title : '招聘列表', //表格标题
 										iconCls : 'icon-list', //表格图标
 										nowrap : false, //是否只显示一行，即文本过多是否省略部分。
 										striped : true,
@@ -75,6 +75,18 @@
 											field : 'address',
 											title : '地址',
 											align : 'center'
+										},{
+											field : 'phone',
+											title : '电话',
+											align : 'center'
+										},{
+											field : 'email',
+											title : '邮箱',
+											align : 'center'
+										},{
+											field : 'sex',
+											title : '性别',
+											align : 'center'
 										}]],
 										
 										toolbar : [
@@ -85,13 +97,13 @@
 														//显示上传界面
 														$('#addCustomer').dialog(
 															{
-																title : '简历管理|添加简历信息',
+																title : '客户管理|添加客户信息',
 																width : 500,
 																iconCls : 'icon-add',
 																height : 300,
 																closed : false,
 																cache : false,
-																href : 'add.jsp',
+																href : '/pages/customer/add.jsp',
 																modal : true
 															});
 
@@ -124,8 +136,8 @@
 
 																});
 															
-															 $("#id").val(id);
-															 $("#test").val("1231"); 
+// 															 $("#id").val(id);
+// 															 $("#test").val("1231"); 
 															 
 														}else {
 															alert("提示, 请选中要编辑的行！")
