@@ -23,29 +23,14 @@
 
 	<div style="margin: 20px 0;"></div>
 	<div class="easyui-layout" style="width: 100%; height: 660px;">
-		<div data-options="region:'north'" style="height: 150px">
+<!-- 		<div data-options="region:'north'" style="height: 150px"> -->
+<!-- 		</div> -->
 
-<!-- 			<form id="form1" method="post" -->
-<!-- 				action="/forFire/recruit/importExcelTest.do" -->
-<!-- 				  enctype="multipart/form-data"> -->
-<!-- 				<tr> -->
-<!-- 					<td width="25%" align="right">上传文件：</td> -->
-<!-- 					<td><input type="file" name="upfile" style="width: 300px;"></td> -->
-<!-- 				</tr> -->
-<!-- 				<tr align="center" valign="middle"> -->
-<!-- 					<td height="60" colspan="2"><input type="submit" ID="BtnOK" value="确认上传"></td> -->
-<!-- 				</tr> -->
-<!-- 			</form> -->
-          北斗张飞欢迎你
-
-
-		</div>
-
-				<div data-options="region:'south',split:true" style="height: 50px;"></div>
-				<div data-options="region:'east',split:true" title="East"
-					style="width: 100px;"></div>
-		<div data-options="region:'west',split:true" title="左侧"
-			style="width: 200px;"></div>
+<!-- 				<div data-options="region:'south',split:true" style="height: 50px;"></div> -->
+<!-- 				<div data-options="region:'east',split:true" title="East" -->
+<!-- 					style="width: 100px;"></div> -->
+<!-- 		<div data-options="region:'west',split:true" title="左侧" -->
+<!-- 			style="width: 200px;"></div> -->
 
 	<div id="addRecruit"></div>
 		<div id="updateRecruit"></div>

@@ -4,10 +4,6 @@
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
-	
-    HttpSession s = request.getSession(); 
-	User user =(User)s.getAttribute("user");
-	String userName = user.getUserName();
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,17 +21,15 @@
 	<div style="margin: 20px 0;"></div>
 	<div class="easyui-layout" style="width: 100%; height: 660px;">
 		
-		<div data-options="region:'north'" style="height: 150px">
-
-    			当前用户为：<%=userName%>
+<!-- 		<div data-options="region:'north'" style="height: 150px"> -->
 		
-		</div>
-		<div data-options="region:'south',split:true" style="height: 50px;"></div>
-		<div data-options="region:'east',split:true" title="East" style="width: 100px;"></div>
+<!-- 		</div> -->
+<!-- 		<div data-options="region:'south',split:true" style="height: 50px;"></div> -->
+<!-- 		<div data-options="region:'east',split:true" title="East" style="width: 100px;"></div> -->
 	
-		<div data-options="region:'west',split:true" title="左侧" style="width: 200px;">
-			<a href="/pages/resume/list.jsp" style="border-left: 3">订单页面</a>
-		</div>
+<!-- 		<div data-options="region:'west',split:true" title="左侧" style="width: 200px;"> -->
+<!-- 			<a href="/pages/resume/list.jsp" style="border-left: 3">订单页面</a> -->
+<!-- 		</div> -->
     	
     	<div id="addCustomer"></div>
 		<div id="updateCustomer"></div>

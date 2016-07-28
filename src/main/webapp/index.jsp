@@ -1,4 +1,12 @@
-<%@ page language="java"  pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,com.model.User" pageEncoding="UTF-8"%>
+<%
+    HttpSession s = request.getSession(); 
+	User user =(User)s.getAttribute("user");
+	String userName ="";
+	if(user != null)
+	userName = user.getUserName();
+%>
+
 <!DOCTYPE html>
 <html>
 <jsp:include page="${ctx}/pages/commons.jsp"></jsp:include>
@@ -37,7 +45,7 @@
     <div data-options="region:'north'" class="z_header">
 	    <div class="z_header-nav">
 			<ul>
-				<li><span class="z_logintxt">您好：<small></small>，欢迎登录!
+				<li><span class="z_logintxt">您好：<small></small><%=userName%>，欢迎登录!
 				</span></li>
 				<li><a class=" z_button" href="#"><span
 						class="z_buttontxt">进入论坛</span></a></li>
@@ -53,29 +61,32 @@
 				style="overflow: hidden" frameborder="0"></iframe>
 		</div>
     </div>
-    <div data-options="region:'west',split:true,headerCls:'z_nav-header' "
-		title="导航菜单" class="z_nav">
-        <div id="nav" class="easyui-accordion"  style="list-style: none;" fit="true" border="false">
-		</div>
+    
+    <div data-options="region:'west',split:true,headerCls:'z_nav-header' " title="导航菜单" class="z_nav">
+        
+        <div id="nav" class="easyui-accordion"  style="list-style: none;" fit="true" border="false"></div>
+        
 	</div>
     <div data-options="region:'center'" class="z_main">
         <div id="tabs" class="easyui-tabs" data-options="fit:true,border:false">
            	 <div title="首页"  class="z_welcomewrap">
-           	 	<div class="indexBJ">
-           	 		什么鸟
-           	 	</div>	
-           	  </div>
+          	  
+          	  <div class="indexBJ">
+          	 		这是首页
+          	 	</div>	
+          	  </div>
+          	  
         </div>
     </div>
     
 <script type="text/javascript">
-var _menus;
+    var _menus;
 	<% if("admin".equals("admin")){ %>
 	 	_menus ={"menus":[
-				{"menuid":"a2","icon":"icon-collect","menuname":"产品管理",
+				{"menuid":"a2","icon":"icon-collect","menuname":"菜单管理",
 					"menus":[
-							{"menuid":"20","menuname":"添加产品","icon":"tree-file","url":"jsp/product/addProduct.jsp"},
-							{"menuid":"21","menuname":"产品列表","icon":"tree-file","url":"jsp/product/productList.jsp"}
+							{"menuid":"20","menuname":"客户管理","icon":"tree-file","url":"pages/customer/list.jsp"},
+							{"menuid":"21","menuname":"订单管理","icon":"tree-file","url":"pages/resume/list.jsp"}
 						]
 				}
 
