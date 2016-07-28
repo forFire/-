@@ -109,13 +109,42 @@
 				iconCls : 'icon-edit',
 				height : 200,
 				closed : false,
-				 collapsible: true,
-	                minimizable: true,
-	                maximizable: true,
-	                resizable: true,
+				collapsible: true,
+                minimizable: true,
+                maximizable: true,
+                resizable: true,
 				cache : false,
 				href : 'pages/editPassword.jsp',
-				modal : true
+// 				modal : true,onClose: function () {
+// 	                alert("Close");
+// 	            }
+// 			    ,
+// 	            toolbar: [{
+// 	                text: 'Add',
+// 	                iconCls: 'icon-add',
+// 	                handler: function () {
+// 	                    alert('add');
+// 	                }
+// 	            }, '-', {
+// 	                text: 'Save',
+// 	                iconCls: 'icon-save',
+// 	                handler: function () {
+// 	                    alert('save');
+// 	                }
+// 	            }],
+// 	            buttons: [{
+// 	                text: 'Ok',
+// 	                iconCls: 'icon-ok',
+// 	                handler: function () {
+// 	                    alert('ok');
+// 	                }
+// 	            }, {
+// 	                text: 'Cancel',
+// 	                iconCls: 'icon-cancel',
+// 	                handler: function () {
+// 	                    $('#editPassword').dialog('close');
+// 	                }
+// 	            }]
 			});
 	}	
 	

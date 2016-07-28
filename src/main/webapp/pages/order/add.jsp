@@ -35,6 +35,10 @@ body {
 						<td>订单描述:</td>
 						<td><input class="easyui-textbox" type="text" name="memo"  value=""></input></td>
 					</tr>
+					<tr>
+						<td>订单时间:</td>
+						<td><input class="easyui-datebox" type="text" name="orderTime"  value=""></input></td>
+					</tr>
 				</table>
 			</form>
 			<div style="text-align: center; padding: 5px">

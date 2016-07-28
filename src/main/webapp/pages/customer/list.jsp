@@ -155,7 +155,10 @@
 											                        
 																	
 																});
-															
+															  var row = $("#customerTable").datagrid("getSelected");
+														        if(row){
+															 		$("#ff").form("load",row);
+														        }
 // 															 $("#test").val("1231"); 
 															 $("#name").val("赋值2"); 
 														}else {
