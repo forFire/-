@@ -38,6 +38,12 @@
 			<table id="customerTable" style="height: 100%; width: 100%;"></table>
 		</div>
 		
+		
+		<input class="easyui-textbox" type="text" id="name"  value=""></input>
+		
+		<input type="text" id="fname" />
+		
+		
 	</div>
 
 	<script type="text/javascript">
@@ -137,17 +143,29 @@
 																	closed : false,
 																	cache : false,
 																	href : 'edit.jsp',
-																	modal : true
-
+																	modal : true,
+																   
+																	onLoad:function(){
+																		console.log('222');
+																	   $('#id').val("赋值"); 
+																	   $("#name").val("赋值2"); 
+																	},onLoadSuccess:function(data){ 
+																		 $("#name").val("赋值2"); 
+											                        }
+											                        
+																	
 																});
 															
-// 															 $("#id").val(id);
 // 															 $("#test").val("1231"); 
-															 
+															 $("#name").val("赋值2"); 
 														}else {
 															alert("提示, 请选中要编辑的行！")
 // 												            $.messager.alert("提示, 请选中要编辑的行！");
 												        }
+// 														$('#updateCustomer').attr('data-id','id1111');
+// 														$("#id").show();
+// 														$("#id").attr('data-id',$('#updateCustomer').attr('data-id')); 
+// 														console.log($('#updateCustomer').attr('data-id'), 111,$("#id"))
 													}
 												},
 												

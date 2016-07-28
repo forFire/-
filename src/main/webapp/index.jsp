@@ -47,14 +47,14 @@
 			<ul>
 				<li><span class="z_logintxt">您好：<small></small><%=userName%>，欢迎登录!
 				</span></li>
-				<li><a class=" z_button" href="#"><span
-						class="z_buttontxt">进入论坛</span></a></li>
-				<li><a class=" z_button" href="javascript:edit()"><span
-						class="z_buttontxt">密码修改</span></a></li>
-				<li><a class="z_button" href="javascript:quit()"><span
-						class="z_buttontxt">退出系统</span></a></li>
+<!-- 				<li><a class=" z_button" href="#"><span -->
+<!-- 						class="z_buttontxt">进入论坛</span></a></li> -->
+				<li><a class=" z_button" href="javascript:edit()"><span class="z_buttontxt">密码修改</span></a></li>
+				<li><a class="z_button" href="javascript:quit()"><span class="z_buttontxt">退出系统</span></a></li>
+				
 			</ul>		
 		</div>
+		
 		<!-- 用户重置密码-->
 		<div class="easyui-dialog" id="editPassword" style="overflow: hidden" closed="true">
 			<iframe id="iframe_editPassword" width="100%" height="99%" scrolling="no"
@@ -63,9 +63,7 @@
     </div>
     
     <div data-options="region:'west',split:true,headerCls:'z_nav-header' " title="导航菜单" class="z_nav">
-        
         <div id="nav" class="easyui-accordion"  style="list-style: none;" fit="true" border="false"></div>
-        
 	</div>
     <div data-options="region:'center'" class="z_main">
         <div id="tabs" class="easyui-tabs" data-options="fit:true,border:false">
@@ -78,6 +76,10 @@
           	  
         </div>
     </div>
+    
+    
+    <div id="editPassword"></div>
+    
     
 <script type="text/javascript">
     var _menus;
@@ -98,7 +100,43 @@
 				}
         ]};
 	<%}%>
-
+	
+	
+	function edit(){
+		$("#editPassword").dialog(
+			{
+				title : '密码修改',
+				width : 500,
+				iconCls : 'icon-edit',
+				height : 300,
+				closed : false,
+				cache : false,
+				href : 'pages/editPassword.jsp',
+				modal : true
+			});
+	}	
+	
+	
+	function passwordSubmit(){
+		
+		alert($("#new").val())
+		
+		$.ajax({
+			type : "POST",
+			url : "/resume/save.do",
+			data:{new1:$("#new").val(),old:$.md5($("#old").val())},
+			data : $("#ff").serialize(),
+			success : function(date) {
+				if(date.ret == "0"){
+					alert("保存成功!");
+				}else{
+					alert("保存出错!"+msg);
+				}
+				$('#editPassword').dialog('close');
+			}
+		});
+	}
+	
 </script>        
 </body>
 </html>

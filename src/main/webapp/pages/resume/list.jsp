@@ -209,12 +209,10 @@
 
 		//改变分页显示
 		function displayMsg() {
-			$('#ResumeInfo')
-					.datagrid('getPager')
-					.pagination(
-							{
-								displayMsg : '当前显示<font color="red"> {from} - {to} </font>条记录   共 <font color="red">{total}</font> 条记录'
-							});
+			$('#ResumeInfo').datagrid('getPager').pagination(
+				{
+					displayMsg : '当前显示<font color="red"> {from} - {to} </font>条记录   共 <font color="red">{total}</font> 条记录'
+				});
 		}
 		
 		

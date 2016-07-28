@@ -56,6 +56,19 @@ public class RegisterCtrl {
 		return ResponseUtil.success("注册成功！");
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
+	public  Map<String, Object> updatePassword(User user, HttpServletRequest request){
+//		System.out.println(user.getUserName()+"=password="+user.getPassword());
+		//保存到数据库中
+		userService.saveUser(user);
+		HttpSession session = request.getSession(true);
+		session.setAttribute("user", user);
+		session.setAttribute("userId", user.getId());
+		return ResponseUtil.success("注册成功！");
+	}
+	
+	
 	
 
 }
