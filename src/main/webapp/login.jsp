@@ -44,6 +44,27 @@
 // 				'password' : me.password.val()
 // 			};
 		
+        $('#password').bind('keypress',function(event){
+            if(event.keyCode == "13"){
+            	$.ajax({
+    				type : 'post',
+    				url : '<%=basePath%>login/login.do',
+    				data:{username:$("#username").val(),password:$.md5($("#password").val())},
+    				dataType:'json',
+    				success : function(obj) {
+    					console.log(obj);
+    					if(obj.ret == 0){
+    						window.top.location = '<%=basePath%>' + "/index.jsp";
+    					}else{
+    						$.messager.alert("提示",obj.desc);
+    					}
+    				}
+    			});
+            }
+        });
+		
+        
+        
 		$("#loginBtn").click(function() {
 			$.ajax({
 				type : 'post',

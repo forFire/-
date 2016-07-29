@@ -97,7 +97,14 @@
 											field : 'sex',
 											title : '性别',
 											width : 100,
-											align : 'center'
+											align : 'center',
+											formatter : function(value, row,index) {
+												if (value == "0") {
+													return '女';
+												} else {
+													return '男';
+												}
+											}
 										}]],
 										
 										toolbar : [
@@ -196,8 +203,7 @@
 																				 }
 																				});
 																		}
-
-																		});
+																});
 														}
 
 													}

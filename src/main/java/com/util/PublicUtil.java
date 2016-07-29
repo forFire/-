@@ -1,5 +1,7 @@
 package com.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -13,4 +15,8 @@ public class PublicUtil {
 	public static String getUUID() {
 		return UUID.randomUUID().toString().replace("-", "");
 	}
+	
+	
+List list = new ArrayList();
+	
 }

@@ -50,7 +50,8 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
         
         if(user == null){  
 //            request.getRequestDispatcher("/register/registerJump.do").forward(request, response);  
-            request.getRequestDispatcher("/login.jsp").forward(request, response);  
+//            request.getRequestDispatcher("/login.jsp").forward(request, response); 
+            response.sendRedirect("/login.jsp");  
             return false;  
         }else  
             return true;     

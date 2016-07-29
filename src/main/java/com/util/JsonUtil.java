@@ -1,7 +1,5 @@
 package com.util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonUtil {
 
+	
     public static <T> String toJson(T model){
-        
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.writeValueAsString(model);
