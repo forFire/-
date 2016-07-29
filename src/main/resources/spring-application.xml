@@ -111,7 +111,7 @@
 		<property name="hostName" value="${redis.host}" />
 		<property name="port" value="${redis.port}" />
 <!-- 		<property name="password" value="${redis.password}" /> -->
-<!-- 		<property name="dbIndex" value="${redis.dbIndex}" /> -->
+		<property name="database" value="${redis.dbIndex}" />
 	</bean>
 
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">

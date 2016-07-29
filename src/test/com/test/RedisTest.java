@@ -22,7 +22,7 @@ public class RedisTest {
     public void testSet(){
 		
 		Orders orders = new Orders();
-		orders.setId(1);
+		orders.setId(2);
 		orders.setMemo("订单描述");
 		redisTestCache.addControlRoomByOrgId(String.valueOf(orders.getId()), orders);
 		
