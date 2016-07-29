@@ -1,5 +1,8 @@
 package com.test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +27,16 @@ public class RedisTest {
 		Orders orders = new Orders();
 		orders.setId(2);
 		orders.setMemo("订单描述");
-		redisTestCache.addControlRoomByOrgId(String.valueOf(orders.getId()), orders);
+//		redisTestCache.addControlRoomByOrgId(String.valueOf(orders.getId()), orders);
 		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("zf", "001");
+		map.put("zp", "002");
+		
+		redisTestCache.setMap(map);
+		redisTestCache.incrementValue("zf", 1);
+		
+		System.out.println(redisTestCache.getValue("zf"));
 		
 	}
 	
