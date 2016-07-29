@@ -1,5 +1,5 @@
 1:创建  java source folder
-2:打算用到技术:maven + spring mvc + hibernate + redis + mysql + jquery + easyui +Spring Security的权限过滤
+2:打算用到技术:maven + spring mvc + hibernate + redis +mina+ mysql + jquery + easyui +Spring Security的权限过滤
 3:配置 spring mvc  web.xml spring-servlet.xml spring-application.xml
 4:log4J配置  web.xml 
 5:spring-application.xml中配置事务expression="execution(public * com.service.impl.*Impl.*(..))" 之前要建好文件夹

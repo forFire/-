@@ -69,6 +69,12 @@ public class RedisTestCache {
 	
 	
 	
+	/**
+	 *list 
+	 */
+	public void listTest(String key,String value){
+		redisTemplate.opsForList().leftPush(key, value);
+	}
 	
 	
 	
