@@ -40,7 +40,6 @@ public class DemoTest {
 	
 	@Test
 	public  void listTest() {
-		
 //		List list = new ArrayList();
 //		list.add(1);
 //		list.add(2);

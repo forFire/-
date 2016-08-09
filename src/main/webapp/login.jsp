@@ -54,7 +54,7 @@
     				success : function(obj) {
     					console.log(obj);
     					if(obj.ret == 0){
-    						window.top.location = '<%=basePath%>' + "/index.jsp";
+    						window.top.location = '<%=basePath%>' + "index.jsp";
     					}else{
     						$.messager.alert("提示",obj.desc);
     					}
@@ -74,7 +74,7 @@
 				success : function(obj) {
 					console.log(obj);
 					if(obj.ret == 0){
-						window.top.location = '<%=basePath%>' + "/index.jsp";
+						window.top.location = '<%=basePath%>' + "index.jsp";
 					}else{
 						$.messager.alert("提示",obj.desc);
 					}
