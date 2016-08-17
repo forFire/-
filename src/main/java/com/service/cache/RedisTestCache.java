@@ -20,21 +20,23 @@ public class RedisTestCache {
 	private RedisTemplate<String, Object> redisTemplate;
 	private static final String ORDER = "order_";
 	
+	private static final String SET = "set_";
+	
 	
 	
 	/**
 	 *set 无序去重
 	 */
 	public void addControlRoomByOrgId(String orderId, Orders orders) {
-		 redisTemplate.opsForSet().add(ORDER+orderId,JsonUtil.toJson(orders));
+		 redisTemplate.opsForSet().add(SET+orderId,JsonUtil.toJson(orders));
 	}
 	
 	public Set<Object> getControlRoomByOrgId(String orderId) {
-		return  redisTemplate.opsForSet().members(ORDER+orderId);
+		return  redisTemplate.opsForSet().members(SET+orderId);
 	}
 	
 	public void removeControlRoomByOrgId(String orderId,Orders orders) {
-		redisTemplate.opsForSet().remove(ORDER+orderId,JsonUtil.toJson(orders));
+		redisTemplate.opsForSet().remove(SET+orderId,JsonUtil.toJson(orders));
 	}
 	
 	
