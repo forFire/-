@@ -18,8 +18,6 @@ body {
 }
 </style>
 
-
-
 </head>
 <body>
 <input class="easyui-textbox" type="text"   id ="test" value="">

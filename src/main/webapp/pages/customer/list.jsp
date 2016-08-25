@@ -37,12 +37,7 @@
 			style="width: 100px;">
 			<table id="customerTable" style="height: 100%; width: 100%;"></table>
 		</div>
-		
-		
-		<input class="easyui-textbox" type="text" id="name"  value=""></input>
-		
 		<input type="text" id="fname" />
-		
 		
 	</div>
 
